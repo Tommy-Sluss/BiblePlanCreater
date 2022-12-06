@@ -1,3 +1,5 @@
-This is software is copyright Christopher Bruce Hilbert. 
+This software is open source and free to use.
 
-Students are granted permission to use this codebase as part of their academic studies and research. All other rights are reserved.
+not licensed to sell commericially
+
+.clang-format file, cmakelists.txt, and conanfile.txt are from Base Repository from Bruce Hilbert

@@ -1,0 +1,21 @@
+# Build directories and binary files
+build/
+
+# IDE files
+.vscode/
+*.swp
+*~
+*.log
+
+# OS Generated Files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.Trash-*
+$RECYCLE.BIN/
+.TemporaryItems
+ehthumbs.db
+Thumbs.db

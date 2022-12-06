@@ -25,7 +25,7 @@ main()
     const char* bookFile = "BookStats.csv";
 
     Bible::readStats(file, bookAVG, verseSum, book);
-    cout << verseSum << endl;
+    // cout << verseSum << endl;
 
     int option;
     cout << "Input: \n(1): Input number of days\n(2): Input date\n";
@@ -54,10 +54,32 @@ main()
         cout << days << endl;
     }
 
+    int option2;
+    cout << "\nWould you like to start from Genesis 1:1 or input a Book/Chapter/Verse to start at?" << endl;
+    cout << "Input: \n(1): Start from Beginning\n(2): Input Book/Chapter/Verse\n";
+    cin >> option2;
+    if (option2 == 1) {
+        cout << "\nYou have chosen to start from Genesis 1:1" << endl;
+        cout << "Writing the plan to a file\nThank you for creating a new plan!" << endl;
+    } else {
+        string book;
+        int chapter;
+        int verse;
+        cout << "Please input the book you wish to start at\n";
+        cin >> book;
+        cout << "Please input the chapter you wish to start at\n";
+        cin >> chapter;
+        cout << "Please input the verse you wish to start at\n";
+        cin >> verse;
+        cout << "\n\nStarting a new plan at " << book << " " << chapter << ":" << verse << endl;
+    }
+
     Bible::versePerDay(bookAVG, verseSum, days, versesPerDay);
-    cout << "You have to read: " << versesPerDay << " verses per day." << endl;
+    cout << "\nYou have to read: " << versesPerDay << " verses per day." << endl;
     Bible::readBookstats(bookFile, bookStats, chaptersInBook);
     vector<vector<int>> readingPlan;
-    Bible::chapterAndVerse(
-      bookStats, chaptersInBook, versesPerDay, bookDay, chapterDay, verseDay, readingPlan, book, days);
+    int currentDay = 0;
+    Bible::chapterAndVerse(bookStats, chaptersInBook, versesPerDay, readingPlan, book, days, currentDay);
+    int difference = days - currentDay;
+    cout << "\nThis plan is created with: " << difference << " grace days" << endl;
 }
